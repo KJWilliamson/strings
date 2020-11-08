@@ -65,7 +65,12 @@ def both_ends(s):
 
 def fix_start(s):
     # your code here
-    return
+    # first character itself
+    first = s[0]
+    # everything after 1st character
+    everything_else = s[1:]
+    everything_else_changed = everything_else.replace(first, '*')
+    return first + everything_else_changed
 
 
 # D. mix_up
@@ -80,7 +85,7 @@ def fix_start(s):
 
 def mix_up(a, b):
     # your code here
-    return
+    return b[:2] + a[2:] + " " + a[:2] + b[2:]
 
 
 # E. verbing
