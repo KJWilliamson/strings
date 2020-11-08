@@ -29,8 +29,10 @@ __author__ = "Kamela Williamson"
 
 def donuts(count):
     # your code here
-
-    return
+    if count < 10:
+        return 'Number of donuts: ' + str(count)
+    else:
+        return 'Number of donuts: many'
 
 
 # B. both_ends
@@ -44,7 +46,10 @@ def donuts(count):
 
 def both_ends(s):
     # your code here
-    return
+    if len(s) > 2:
+        return s[:2] + s[-2:]
+    else:
+        return ""
 
 
 # C. fix_start
