@@ -139,8 +139,17 @@ def not_bad(s):
 #   e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form:
 #   a-front + b-front + a-back + b-back
+# did this take anyone else hours to get
 
 
 def front_back(a, b):
     # your code here
-    return
+    a_part = len(a) // 2
+    b_part = len(b) // 2
+
+    if len(a) % 2 == 1:
+        a_part = a_part + 1
+    if len(b) % 2 == 1:
+        b_part = b_part + 1
+
+    return a[:a_part] + b[:b_part] + a[a_part:] + b[b_part:]
