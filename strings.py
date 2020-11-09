@@ -16,6 +16,10 @@ Kenzie assignment: Strings!
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
 __author__ = "Kamela Williamson"
+# https://docs.python.org/3/tutorial/
+# https://www.w3schools.com/python/
+# https://www.youtube.com/watch?v=k9TUPpGqYTo&feature=emb_logo
+# https://pythonprinciples.com/lessons/
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
@@ -98,7 +102,13 @@ def mix_up(a, b):
 
 def verbing(s):
     # your code here
-    return
+    if len(s) < 3:
+        return s
+    # -3 last 3 characters
+    elif s[-3:] == 'ing':
+        return s + 'ly'
+    else:
+        return s + 'ing'
 
 
 # F. not_bad
@@ -108,11 +118,17 @@ def verbing(s):
 # Return the resulting string.
 # Example:
 #   'This dinner is not that bad!' -> 'This dinner is good!'
+# this took me forever. my brain hurts
 
 
 def not_bad(s):
     # your code here
-    return
+    s_not = s.find('not')
+    s_bad = s.find('bad')
+
+    if s_not != -1 and s_bad != -1 and s_bad > s_not:
+        s = s[:s_not] + 'good' + s[s_bad+3:]
+    return s
 
 
 # G. front_back
