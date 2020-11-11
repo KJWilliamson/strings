@@ -20,6 +20,7 @@ __author__ = "Kamela Williamson"
 # https://www.w3schools.com/python/
 # https://www.youtube.com/watch?v=k9TUPpGqYTo&feature=emb_logo
 # https://pythonprinciples.com/lessons/
+# https://repl.it/@KJWilliamson/Q3-sprint-1-and-2
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
