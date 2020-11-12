@@ -15,7 +15,12 @@ Kenzie assignment: Strings!
 
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Kamela Williamson"
+# https://docs.python.org/3/tutorial/
+# https://www.w3schools.com/python/
+# https://www.youtube.com/watch?v=k9TUPpGqYTo&feature=emb_logo
+# https://pythonprinciples.com/lessons/
+# https://repl.it/@KJWilliamson/Q3-sprint-1-and-2
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
@@ -29,7 +34,10 @@ __author__ = "???"
 
 def donuts(count):
     # your code here
-    return
+    if count < 10:
+        return 'Number of donuts: ' + str(count)
+    else:
+        return 'Number of donuts: many'
 
 
 # B. both_ends
@@ -43,7 +51,10 @@ def donuts(count):
 
 def both_ends(s):
     # your code here
-    return
+    if len(s) > 2:
+        return s[:2] + s[-2:]
+    else:
+        return ""
 
 
 # C. fix_start
@@ -59,7 +70,12 @@ def both_ends(s):
 
 def fix_start(s):
     # your code here
-    return
+    # first character itself
+    first = s[0]
+    # everything after 1st character
+    everything_else = s[1:]
+    everything_else_changed = everything_else.replace(first, '*')
+    return first + everything_else_changed
 
 
 # D. mix_up
@@ -74,7 +90,7 @@ def fix_start(s):
 
 def mix_up(a, b):
     # your code here
-    return
+    return b[:2] + a[2:] + " " + a[:2] + b[2:]
 
 
 # E. verbing
@@ -87,7 +103,13 @@ def mix_up(a, b):
 
 def verbing(s):
     # your code here
-    return
+    if len(s) < 3:
+        return s
+    # -3 last 3 characters
+    elif s[-3:] == 'ing':
+        return s + 'ly'
+    else:
+        return s + 'ing'
 
 
 # F. not_bad
@@ -97,11 +119,17 @@ def verbing(s):
 # Return the resulting string.
 # Example:
 #   'This dinner is not that bad!' -> 'This dinner is good!'
+# this took me forever. my brain hurts
 
 
 def not_bad(s):
     # your code here
-    return
+    s_not = s.find('not')
+    s_bad = s.find('bad')
+
+    if s_not != -1 and s_bad != -1 and s_bad > s_not:
+        s = s[:s_not] + 'good' + s[s_bad+3:]
+    return s
 
 
 # G. front_back
@@ -112,8 +140,17 @@ def not_bad(s):
 #   e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form:
 #   a-front + b-front + a-back + b-back
+# did this take anyone else hours to get
 
 
 def front_back(a, b):
     # your code here
-    return
+    a_part = len(a) // 2
+    b_part = len(b) // 2
+
+    if len(a) % 2 == 1:
+        a_part = a_part + 1
+    if len(b) % 2 == 1:
+        b_part = b_part + 1
+
+    return a[:a_part] + b[:b_part] + a[a_part:] + b[b_part:]
